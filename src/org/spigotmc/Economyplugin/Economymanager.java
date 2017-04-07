@@ -6,18 +6,14 @@ import java.util.HashMap;
 public class Economymanager 
 {
 	private static Main plugin;
+	public static HashMap<String, Double> bal = new HashMap<String, Double>(); //{PlayerName, Balance}
 	public Economymanager(Main instance)
 	{
 		plugin = instance;
-	}
-	public static HashMap<String, Double> bal = new HashMap<String, Double>(); //{PlayerName, Balance}
-	public static void loadPermBalance()
-	{
 		for(String player : Loadhashmap.getPermBalanceMap().keySet())
 		{
-			bal.put("balance."+player, Loadhashmap.getPermBalanceMap().get(player));
+			bal.put(player, Loadhashmap.getPermBalanceMap().get(player));
 		}
-		return;
 	}
 	public static void setBalance(String player, double amount)
 	{

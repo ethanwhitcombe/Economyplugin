@@ -19,6 +19,7 @@ import org.bukkit.event.EventHandler;
 			{
 			event.getPlayer().sendMessage(ChatColor.RED+"Economy: Player does not have an account, creating one now...");
 			Economymanager.setBalance(event.getPlayer().getName(), 200D);
+			Rankmanager.setBalance(event.getPlayer().getName(), "Freeman");
 			}
 		}
 }}

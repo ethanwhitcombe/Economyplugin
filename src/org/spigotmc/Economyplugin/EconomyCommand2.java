@@ -20,9 +20,10 @@ public class EconomyCommand2 implements CommandExecutor
 			return true;
 			}
 			double bal = Economymanager.getRunningBalance(args[0]);
+			String rank = Rankmanager.getRunningBalance(args[0]);
 			try
 			{
-				cs.sendMessage(ChatColor.BLUE+ "Balance: "+ bal + " Ducat(s)" );
+				cs.sendMessage(ChatColor.BLUE+ "Balance: "+ bal + " Ducat(s)," +" Rank:"+ rank);
 				return true;
 			}catch (Exception e)
 			{

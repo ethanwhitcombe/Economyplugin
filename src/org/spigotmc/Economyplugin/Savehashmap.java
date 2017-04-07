@@ -1,6 +1,6 @@
 package org.spigotmc.Economyplugin;
 
-public class savingloadingAPI 
+public class Savehashmap
 {
 	private static Main plugin = Economymanager.getPlugin();
 

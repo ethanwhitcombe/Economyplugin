@@ -1,0 +1,17 @@
+main: org.spigotmc.Economyplugin.Main
+name: Economyplugin
+version: 1.0
+author: Lord_Immortal
+description: An Economy Plugin for Fables of Velorae.
+commands:
+  econ:
+    description: Set, add or remove currency.
+    usage: /econ set <player> <amount>
+    permission: Economyplugin.economy
+    permission-message: You don't have the Economyplugin.economy permission.
+  balance:
+    description: An example command
+    usage: /balance <player>
+    permission: Economyplugin.balance
+    permission-message: You don't have the Economyplugin.balance permission.
+    

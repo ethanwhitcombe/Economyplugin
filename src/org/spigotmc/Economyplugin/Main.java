@@ -15,13 +15,17 @@ public class Main extends JavaPlugin
 		getCommand("balance").setExecutor(new EconomyCommand2());
 		new Loadhashmap(this);
 		new Economymanager(this);
+		new Loadrankmap(this);
+		new Rankmanager(this);
+
 		this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
     }
    
     @Override
     public void onDisable() {
     	//public void savingloadingAPI.saveBalances();
-    	savingloadingAPI.saveBalances();
+    	Savehashmap.saveBalances();
+    	Saverankmap.saveRanks();
     	
        
     }
