@@ -15,18 +15,20 @@ public class StatusCommand implements CommandExecutor {
     }
 
     public boolean onCommand(CommandSender cs, Command command, String s, String[] args) {
-        if (args.length != 1) {
-            cs.sendMessage(ChatColor.RED + "Not enough Args have been used.");
-            cs.sendMessage(ChatColor.GREEN + "Usage: /status <playername>");
-            return true;
-        }
-        String player = args[0];
-        if (!ranks.hasRank(player) || !balances.hasBalance(player)) {
-            cs.sendMessage(ChatColor.RED + "Error: Player " + player + " missing rank and/or balance");
-            return true;
-        }
+//        if (args.length != 1) {
+//            cs.sendMessage(ChatColor.RED + "Not enough Args have been used.");
+//            cs.sendMessage(ChatColor.GREEN + "Usage: /status <playername>");
+//            return true;
+//        }
+//        String player = args[0];
+//        if (!ranks.hasRank(player) || !balances.hasBalance(player)) {
+//            cs.sendMessage(ChatColor.RED + "Error: Player " + player + " missing rank and/or balance");
+//            return true;
+//        }
         try {
-            cs.sendMessage(ChatColor.BLUE + "Balance: " + balances.getBalance(player) + " Ducat(s)," + " Rank:" + ranks.getRank(player));
+            for(String player : ranks.getPlayers()) {
+                cs.sendMessage(ChatColor.BLUE + "Player: " + player + " Balance: " + balances.getBalance(player) + " Ducat(s)," + " Rank:" + ranks.getRank(player));
+            }
             return true;
         } catch (Exception e) {
             cs.sendMessage(ChatColor.RED + "Invalid command, try /balance.");

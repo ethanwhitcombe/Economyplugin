@@ -3,6 +3,7 @@ package org.spigotmc.Economyplugin;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class Ranks
 {
@@ -24,6 +25,10 @@ public class Ranks
 				playerRanks.put(player, section.getString(player));
 			}
 		}
+	}
+
+	public Set<String> getPlayers() {
+		return playerRanks.keySet();
 	}
 
 	public boolean hasRank(String player) {
