@@ -1,33 +1,28 @@
 package org.spigotmc.Economyplugin;
 
-//import java.util.HashMap;
-
 import org.bukkit.plugin.java.JavaPlugin;
-
-
-
 
 public class Main extends JavaPlugin 
 {
+	Balances balances;
+	Ranks ranks;
+
     @Override
     public void onEnable() {
-		getCommand("econ").setExecutor(new EconomyCommand());
-		getCommand("balance").setExecutor(new EconomyCommand2());
-		new Loadhashmap(this);
-		new Economymanager(this);
-		new Loadrankmap(this);
-		new Rankmanager(this);
+		balances = Balances.getInstance(this);
+		ranks = Ranks.getInstance(this);
+		getCommand("econ").setExecutor(new BalanceCommand(balances));
+		getCommand("balance").setExecutor(new StatusCommand(ranks, balances));
 
-		this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+		this.getServer().getPluginManager().registerEvents(new PlayerJoin(ranks, balances), this);
     }
    
     @Override
     public void onDisable() {
-    	//public void savingloadingAPI.saveBalances();
-    	Savehashmap.saveBalances();
-    	Saverankmap.saveRanks();
-    	
-       
+    	if(balances != null)
+    		balances.saveBalances(this);
+    	if(ranks != null)
+    		ranks.saveRanks(this);
     }
 
 }
