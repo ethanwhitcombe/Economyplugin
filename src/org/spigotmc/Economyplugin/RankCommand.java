@@ -2,9 +2,10 @@ package org.spigotmc.Economyplugin;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class RankCommand {
+public class RankCommand implements CommandExecutor{
     private Ranks ranks;
 
     public RankCommand(Ranks ranks) {

@@ -13,6 +13,7 @@ public class Main extends JavaPlugin
 		ranks = Ranks.getInstance(this);
 		getCommand("econ").setExecutor(new BalanceCommand(balances));
 		getCommand("balance").setExecutor(new StatusCommand(ranks, balances));
+		getCommand("rank").setExecutor(new RankCommand(ranks));
 
 		this.getServer().getPluginManager().registerEvents(new PlayerJoin(ranks, balances), this);
     }
