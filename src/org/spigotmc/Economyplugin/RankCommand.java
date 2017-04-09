@@ -15,7 +15,7 @@ public class RankCommand implements CommandExecutor{
     public boolean onCommand(CommandSender cs, Command command, String s, String[] args) {
         if (args.length != 2) {
             cs.sendMessage(ChatColor.RED + "Not enough Args have been used.");
-            cs.sendMessage(ChatColor.GREEN + "Usage: /econ <add/remove/set> <player> <Rank> (The rank must be uppercase!)");
+            cs.sendMessage(ChatColor.GREEN + "Usage: /rank <add/remove/set> <player> <Rank> (The rank must be uppercase!)");
             return true;
         }
         String addRmoveSet = args[0];
