@@ -23,9 +23,10 @@ public class BalanceCommand implements CommandExecutor {
         if (args.length < 3) {
             return usage(cs);
         }
+
         String player = args[1];
         if (!balances.hasBalance(player)) {
-            cs.sendMessage(ChatColor.RED + "Error: Player does not have an account");
+            cs.sendMessage(ChatColor.RED + "Error: Player " + player + " does not have an account");
             return true;
         }
         double amount = 0.0;

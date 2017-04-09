@@ -27,7 +27,7 @@ public class RankCommand implements CommandExecutor{
                 break;
             case "set":
                 if (!ranks.hasRank(player)) {
-                    cs.sendMessage(ChatColor.RED + "Error: Player does not exist");
+                    cs.sendMessage(ChatColor.RED + "Error: Player " + player + " does not exist");
                     return true;
                 }
                 String rank = args[2];

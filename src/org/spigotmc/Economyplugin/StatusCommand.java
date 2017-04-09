@@ -22,7 +22,7 @@ public class StatusCommand implements CommandExecutor {
         }
         String player = args[0];
         if (!ranks.hasRank(player) || !balances.hasBalance(player)) {
-            cs.sendMessage(ChatColor.RED + "Error: Player missing rank and/or balance");
+            cs.sendMessage(ChatColor.RED + "Error: Player " + player + " missing rank and/or balance");
             return true;
         }
         try {

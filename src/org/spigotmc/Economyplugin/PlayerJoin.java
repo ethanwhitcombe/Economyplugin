@@ -18,10 +18,10 @@ public class PlayerJoin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         String player = event.getPlayer().getName();
         if (ranks.hasRank(player) && balances.hasBalance(player)) {
-            event.getPlayer().sendMessage(ChatColor.BLUE + "Rank: " + ranks.getRank(player) + "; Balance: " + balances.getBalance(player) + " Ducat(s)");
+            event.getPlayer().sendMessage(ChatColor.BLUE + "Player: " + player + "; Rank: " + ranks.getRank(player) + "; Balance: " + balances.getBalance(player) + " Ducat(s)");
         }
         else {
-            event.getPlayer().sendMessage(ChatColor.RED + "Economy: Player does not have an account, creating one now...");
+            event.getPlayer().sendMessage(ChatColor.RED + "Economy: Player " + player + " does not have an account, creating one now...");
             balances.setBalance(player, 200D);
             ranks.setRank(player, "Freeman");
             event.getPlayer().sendMessage(ChatColor.BLUE + "Rank: " + ranks.getRank(player) + "; Balance: " + balances.getBalance(player) + " Ducat(s)");
